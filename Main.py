@@ -33,7 +33,7 @@ plt.figure(figsize=(12, 8))
 sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
 plt.show()
                                     #-----------------------------------------------------------------------------------
-X = df.drop('Valor_Medio', axis=1)  #-------------------Substituir o 'Valor_Medio' pela variável alvo------------------
+X = df.drop('Valor_Medio', axis=1)  #-------------------Substituir o 'Valor_Medio' pela variável alvo-------------------
 y = df['Valor_Medio']               #-----------------------------------------------------------------------------------
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -50,6 +50,8 @@ print(f'Coeficiente de Determinação R²: {r2}')
 
 coeficientes = pd.DataFrame(modelo.coef_, X.columns, columns=['Coeficiente'])
 print(coeficientes)
+
+#-------------------------------------GRÁFICO INTERATIVO----------------------------------------------#
 
 def plot_scatter():
     x_var = combo_x.get()
